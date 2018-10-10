@@ -119,6 +119,90 @@
 	   
 	<div class="article-header">
 	    
+		<a class="article-title" href="/2018/10/10/input输入框只能金额-小数点后两位/">input输入框只能金额(小数点后两位)</a>  
+	       
+		 
+
+		<div class="article-meta">
+			<time>Oct 10, 2018</time>
+			
+				<span class="iconfont icon-star"></span>
+				            
+						<a class="article-tag" href="/tags/JavaScript/">JavaScript</a>           
+				
+			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		 
+			<p><br>如今电子管理系统的普及有效降低了记账成本与时间，同时为营收、支出等提供数据支持，大部分都是采用网页录入的方案，那么限制input输入框的输入内容能有效降低因误操作导致的数据错误的发生概率<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    @param value 输入的值</span><br><span class="line">    @returns value 格式化后的值</span><br><span class="line">*/</span><br><span class="line">function formatMoney(value) &#123;</span><br><span class="line">    //先把非数字的都替换掉，除了数字和.</span><br><span class="line"></span><br><span class="line">    value = value.replace(/[^\d.]/g,&quot;&quot;);</span><br><span class="line"></span><br><span class="line">    //保证只有出现一个.而没有多个.</span><br><span class="line"></span><br><span class="line">    value = value.replace(/\.&#123;2,&#125;/g,&quot;.&quot;);</span><br><span class="line"></span><br><span class="line">    //必须保证第一个为数字而不是.</span><br><span class="line"></span><br><span class="line">    value = value.replace(/^\./g,&quot;&quot;);</span><br><span class="line"></span><br><span class="line">    //保证.只出现一次，而不能出现两次以上</span><br><span class="line"></span><br><span class="line">    value = value.replace(&quot;.&quot;,&quot;$#$&quot;).replace(/\./g,&quot;&quot;).replace(&quot;$#$&quot;,&quot;.&quot;);</span><br><span class="line"></span><br><span class="line">    //只能输入两个小数</span><br><span class="line"></span><br><span class="line">    value = value.replace(/^(\-)*(\d+)\.(\d\d).*$/,&apos;$1$2.$3&apos;);</span><br><span class="line">    return value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+		  	  
+	</div>
+
+	<div class="article-bottom">
+		<a class="article-readmore" href="/2018/10/10/input输入框只能金额-小数点后两位/">Continue</a> 	
+	</div>	
+    
+</article>     
+     	
+    	  	
+  		
+    			
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="article-title" href="/2018/10/10/input输入框只能输入正数且保留两位小数正则表达式/">input输入框只能输入正数且保留两位小数正则表达式</a>  
+	       
+		 
+
+		<div class="article-meta">
+			<time>Oct 10, 2018</time>
+			
+				<span class="iconfont icon-star"></span>
+				            
+						<a class="article-tag" href="/tags/正则表达式/">正则表达式</a>           
+				            
+						<a class="article-tag" href="/tags/JavaScript/">JavaScript</a>           
+				
+			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		 
+			<p>数字校验（项目中用于校验金额的）：</p>
+<p>任意正整数，正小数（小数位不超过2位）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var isNum = /^(([1-9][0-9]*)|(([0]\.\d&#123;1,2&#125;|[1-9][0-9]*\.\d&#123;1,2&#125;)))$/;</span><br><span class="line">function checkNumber (val) &#123;</span><br><span class="line">   if( isNum.test(val) ) &#123;</span><br><span class="line">       return true;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+		  	  
+	</div>
+
+	<div class="article-bottom">
+		<a class="article-readmore" href="/2018/10/10/input输入框只能输入正数且保留两位小数正则表达式/">Continue</a> 	
+	</div>	
+    
+</article>     
+     	
+    	  	
+  		
+    			
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
 		<a class="article-title" href="/2018/10/09/搬运-前端常用轮子/">[搬运]前端常用轮子</a>  
 	       
 		 
@@ -128,11 +212,11 @@
 			
 				<span class="iconfont icon-star"></span>
 				            
+						<a class="article-tag" href="/tags/JavaScript/">JavaScript</a>           
+				            
 						<a class="article-tag" href="/tags/web前端/">web前端</a>           
 				            
 						<a class="article-tag" href="/tags/HTML5/">HTML5</a>           
-				            
-						<a class="article-tag" href="/tags/JavaScript/">JavaScript</a>           
 				
 			
 		</div>
@@ -162,14 +246,14 @@
 <h3 id="wow-js"><a href="#wow-js" class="headerlink" title="wow.js"></a>wow.js</h3><ul>
 <li>滚动展示动画</li>
 <li>WOW.js 依赖 animate.css，所以它支持 animate.css 多达 60 多种的动画效果。</li>
-<li><a href="https://github.com/matthieua/WOW" target="_blank" rel="noopener">https://github.com/matthieua/WOW</a>  </li>
+<li><a href="https://github.com/matthieua/WOW" target="_blank" rel="noopener">https://github.com/matthieua/WOW</a><br>### </li>
 </ul>
 
 		  	  
 	</div>
 
 	<div class="article-bottom">
-		<a class="article-readmore" href="/2018/10/09/搬运-前端常用轮子/">阅读更多</a> 	
+		<a class="article-readmore" href="/2018/10/09/搬运-前端常用轮子/">Continue</a> 	
 	</div>	
     
 </article>     
@@ -229,7 +313,7 @@
 	</div>
 
 	<div class="article-bottom">
-		<a class="article-readmore" href="/2018/10/03/The-development-server-returned-response-error-code-500/">阅读更多</a> 	
+		<a class="article-readmore" href="/2018/10/03/The-development-server-returned-response-error-code-500/">Continue</a> 	
 	</div>	
     
 </article>     
@@ -272,7 +356,7 @@
 	</div>
 
 	<div class="article-bottom">
-		<a class="article-readmore" href="/2018/10/02/hello-world/">阅读更多</a> 	
+		<a class="article-readmore" href="/2018/10/02/hello-world/">Continue</a> 	
 	</div>	
     
 </article>     
@@ -294,7 +378,7 @@
     
     <div class="search-container sildeUpMin">
         <div class="search-header">
-            <input type="text" placeholder="输入你想搜索的" id="search-input" class="search-input">
+            <input type="text" placeholder="Typing Something here." id="search-input" class="search-input">
             <span class="search-cancel">
                 <i class="iconfont icon-cancel">
             </i></span>
@@ -311,31 +395,31 @@
          
             
 
-            <a class="mobile-menu-link" href="/">首页
+            <a class="mobile-menu-link" href="/">Home
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/archives">归档
+            <a class="mobile-menu-link" href="/archives">Archives
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/tags">标签
+            <a class="mobile-menu-link" href="/tags">Tags
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/about">关于
+            <a class="mobile-menu-link" href="/about">About
             </a>
             
          
                           
 
-            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
+            <a class="mobile-menu-link mobile-menu-search" href="#">Search </a>                 
             
          
       
